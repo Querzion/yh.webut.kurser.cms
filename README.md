@@ -22,3 +22,7 @@ dotnet sln add MyProjectFolderAndProject_Name.csproj
 ```bash
 dotnet sln add .\ProjectFolder\MyProjectFolderAndProject_Name.csproj
 ```
+- Run Project (Move to where the *.csproj file is located first)
+```bash
+dotnet run
+```
