@@ -14,3 +14,11 @@ dotnet new umbraco --name MyProjectFolderAndProject_Name
 ```bash
 dotnet new sln --name MyProjectFolderAndProject_Name_OR_SomethingElse
 ```
+- Link the Solution to the *.csproj file
+```bash
+dotnet sln add MyProjectFolderAndProject_Name.csproj
+```
+## OR (if solution file is outside of the project folder)
+```bash
+dotnet sln add .\ProjectFolder\MyProjectFolderAndProject_Name.csproj
+```
