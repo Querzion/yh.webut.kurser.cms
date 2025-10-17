@@ -1,0 +1,33 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+
+	@* var pageTitle = Model.Name;
+	var fullTitle = !string.IsNullOrWhiteSpace(pageTitle) ? $"Onatrix | {pageTitle}" : "Onatrix"; *@
+	
+	var pageTitle = !string.IsNullOrWhiteSpace(Model.Name) ? $"Onatrix | {Model.Name}" : "Onatrix";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>@pageTitle</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+	<link rel="stylesheet" href="~/css/styles.css" />
+</head>
+<body>
+	<header>
+		<p></p>
+	</header>
+	<main>
+		@RenderBody()
+	</main>
+	<footer class="text-center p-4 text-sm">
+		<p>&copy; @DateTime.Now.Year - Slisk's Umbraco Site</p>
+	</footer>
+</body>
+</html>

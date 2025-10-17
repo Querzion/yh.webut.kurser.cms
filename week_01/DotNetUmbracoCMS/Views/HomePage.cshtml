@@ -1,0 +1,48 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HomePage>
+@{
+	Layout = "mainLayout.cshtml";
+
+	@* var title = Model.Value("heroTitle")?.ToString() ?? "Title missing"; *@
+}
+
+@* Shady way to access properties *@
+@* <h1>@title</h1>
+
+<div> 
+	@Html.Raw(Model.Value("heroText")?.ToString() ?? "Text missing")
+</div> *@
+
+<section class="relative py-[7rem]">
+	<div class="absolute inset-0 -z-10">
+		@if (Model.HeroBgImage != null)
+		{
+			<img src="@Model.HeroBgImage.Url()" class="w-full h-full object-cover" />
+		}
+	</div>
+	<div class="container mx-auto px-4 relative z-10">
+		<div class="w-5/12 flex flex-col gap-8">
+			<h1 class="text-[4.5rem] text-[#4F5955] font-bold leading-none">@Model.HeroTitle</h1>
+
+			@* <div>
+				@Model.HeroText
+			</div> *@
+
+			<div class="rte">
+				@Html.Raw(Model.HeroText)
+			</div>
+
+			@if (Model.HeroLink != null)
+			{
+				<a class="bg-[#4F5955] text-white py-3 px-10 no-underline rounded cursor-pointer self-start font-bold" href="@Model.HeroLink.Url">@Model.HeroLink.Name</a>
+			}
+		</div>
+	</div>
+</section>
+
+
+@* View using model properties (UmbracoViewPage<HomePage>) *@
+
+
+
+
